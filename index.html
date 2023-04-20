@@ -52,6 +52,22 @@
               })
             
           })
+          $(document).on('click','#delete_btn',function(){
+                 var path = $("#delete_btn").attr("data-path");
+                 $.ajax({
+                url:'delete.php',
+                type : "POST",
+                data : {path : path},
+                success: function(data){
+                    if(data != ""){
+                    $("#preview").hide();
+                    $("#image_preview").html('');
+                    }
+                }
+                });
+
+                           
+              })
       })
     
     </script>
